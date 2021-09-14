@@ -17,6 +17,7 @@ mydb = mysql.connector.connect(
 mycursor = mydb.cursor()
 
 
+#This function is used to generate a captcha image
 def createCapcha():
     secretInt = random.randint(1000, 9999)
     secret = ImageCaptcha(width=200, height=60)
@@ -243,7 +244,7 @@ def forgotPassword(master):
  return
 
 
-
+#Gui for the delete user menu (calls the deleteUser and createCaptcha function)
 def deleteUserMenu(master):
     master.destroy()
     realCaptcha = createCapcha()
